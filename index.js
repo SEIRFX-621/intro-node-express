@@ -27,4 +27,9 @@ app.get('/getMessageJson', function(req, res) {
     res.status(200).send({ message: 'this is a json response from our backend service!'});
 });
 
+app.use((req, res, next) => {
+    res.status(404).send(
+        "<h1>Page not found on the server</h1>")
+})
+
 app.listen(8000);
